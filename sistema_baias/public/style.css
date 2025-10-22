@@ -1,0 +1,14 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card-header h5 {
+    line-height: 1.5; /* Alinha melhor o título com os botões */
+}
+
+/* Estilo para itens da lista com botão de deletar (modo admin) */
+.list-group-item.admin-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

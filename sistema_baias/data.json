@@ -1,0 +1,44 @@
+{
+  "Região E": {
+    "Honda HR-V": {
+      "codigo_tipo": "3GN",
+      "types": {
+        "3M6XMF7": {
+          "baias": {
+            "Baia 01": ["PN-MOTOR-A", "PN-CHASSI-X", "PN-PARAFUSO-S"],
+            "Baia 02": ["PN-PORTA-E", "PN-VIDRO-E"]
+          }
+        },
+        "3M7XMF8": {
+          "baias": {
+            "Baia 01": ["PN-MOTOR-B", "PN-CHASSI-Y", "PN-PARAFUSO-S"],
+            "Baia 03": ["PN-TETO-SOLAR", "PN-ANTENA"]
+          }
+        }
+      }
+    }
+  },
+  "Região C": {
+    "Honda WR-V": {
+      "codigo_tipo": "3UT",
+      "types": {
+        "39KZMB5": {
+          "baias": {
+            "Baia 01": ["Item POP", "Item CKD"],
+            "Baia 04": ["PN-LANTERNA-C", "PN-FAROL-C"]
+          }
+        }
+      }
+    },
+    "Honda ZR-V": {
+      "codigo_tipo": "4KX",
+      "types": {
+        "4ABZMB9": {
+          "baias": {
+            "Baia 05": ["PN-RACK-TETO", "PN-ESTRIBO", "PN-MULTIMIDIA"]
+          }
+        }
+      }
+    }
+  }
+}
