@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Listas de Produção</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"> Listas de Produção por Baia </a>
+        <button class="btn btn-outline-secondary" id="auth-button">
+          🔐 Entrar como Admin
+        </button>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="card shadow-sm mb-3">
+        <div class="card-header">Filtros de Navegação</div>
+        <div class="card-body">
+          <div class="row g-2">
+            <div class="col-md">
+              <label for="select-setor" class="form-label">Setor</label>
+              <select id="select-setor" class="form-select">
+                <option value="">Selecione...</option>
+              </select>
+            </div>
+            <div class="col-md">
+              <label for="select-modelo" class="form-label">Modelo</label>
+              <select id="select-modelo" class="form-select" disabled>
+                <option value="">Selecione...</option>
+              </select>
+            </div>
+            <div class="col-md">
+              <label for="select-codigo-tipo" class="form-label"
+                >Código Tipo</label
+              >
+              <select id="select-codigo-tipo" class="form-select" disabled>
+                <option value="">Selecione...</option>
+              </select>
+            </div>
+            <div class="col-md">
+              <label for="select-type" class="form-label">Type</label>
+              <select id="select-type" class="form-select" disabled>
+                <option value="">Selecione...</option>
+              </select>
+            </div>
+            <div class="col-md">
+              <label for="select-baia" class="form-label">Baia</label>
+              <select id="select-baia" class="form-select" disabled>
+                <option value="">Selecione...</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div
+          class="card-header d-flex justify-content-between align-items-center"
+        >
+          <span>📦 Itens da Baia Selecionada:</span>
+          <div class="admin-only" style="display: none">
+            <button class="btn btn-warning btn-sm" id="btn-edit-baia">
+              ✎ Editar Baia
+            </button>
+            <button class="btn btn-danger btn-sm" id="btn-delete-baia">
+              🗑️ Excluir Baia
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <ul class="list-group" id="item-list">
+            <li class="list-group-item text-muted">
+              Selecione todos os filtros para ver os itens.
+            </li>
+          </ul>
+
+          <div class="admin-only mt-3" style="display: none">
+            <hr />
+            <h5>[+] Adicionar Novo Item</h5>
+            <form id="form-add-item" class="input-group">
+              <input
+                type="text"
+                id="input-new-item"
+                class="form-control"
+                placeholder="Nome do Part Number"
+                required
+              />
+              <button class="btn btn-primary" type="submit">Adicionar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3 admin-only" style="display: none">
+        <div class="card-header">Gerenciamento (Admin)</div>
+        <div class="card-body">
+          <p>Adicionar novas entradas à hierarquia:</p>
+          <div class="input-group">
+            <input
+              type="text"
+              id="input-new-hierarchy"
+              class="form-control"
+              placeholder="Nome da nova entrada"
+            />
+            <button class="btn btn-success" id="btn-add-baia" disabled>
+              Add Baia
+            </button>
+            <button class="btn btn-success" id="btn-add-type" disabled>
+              Add Type
+            </button>
+            <button class="btn btn-success" id="btn-add-codigo" disabled>
+              Add Código
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

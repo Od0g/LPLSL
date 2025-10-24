@@ -1,0 +1,29 @@
+/* Estilo para o botão de deletar item */
+.list-group-item .delete-item-btn {
+  visibility: hidden; /* Oculto por padrão */
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Exibe o botão de deletar apenas no modo admin e ao passar o mouse */
+body.admin-mode .list-group-item:hover .delete-item-btn {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Cursor de ponteiro para itens da lista no modo admin, indicando interação */
+body.admin-mode .list-group-item {
+  cursor: default;
+}
+
+/* Garante que os controles admin fiquem visíveis (override de 'display: none') */
+body.admin-mode .admin-only {
+  display: block !important;
+}
+
+/* Ajuste para o layout dos botões de adicionar hierarquia */
+body.admin-mode #btn-add-baia,
+body.admin-mode #btn-add-type,
+body.admin-mode #btn-add-codigo {
+  display: inline-block !important;
+}
